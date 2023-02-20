@@ -1,6 +1,6 @@
 
 SET statement_timeout = 0;
-SET lock_timeout = 1;
+SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
@@ -55,8 +55,8 @@ CREATE TABLE public.employee (
     last_name text NOT NULL,
     gender text NOT NULL,
     hire_date date NOT NULL,
-    email text DEFAULT ''::text,
-    CONSTRAINT employee_gender_check CHECK ((gender = ANY (ARRAY['M'::text, 'F'::text])))
+    email text DEFAULT '':text,
+    CONSTRAINT employee_gender_check CHECK ((gender = ANY (ARRAY['M':text, 'F'::text])))
 );
 
 CREATE SEQUENCE public.employee_emp_no_seq
